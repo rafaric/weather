@@ -10,6 +10,10 @@ function App() {
   const [weatherCodes, setWeatherCodes] = useState(null);
   const [mostrar, setMostrar] = useState(true);
   const [ciudad, setCiudad] = useState("Resistencia");
+  /* setTimeout(() => {
+    clima();
+    condiciones();
+  }, 100000); */
   const clima = async () => {
     const { current } = await fetchClima(ciudad);
     setWeather(current);
@@ -49,10 +53,10 @@ function App() {
     if (weather) {
       setIcon(weather.condition.code);
     }
-  }, [weatherCodes, weather]);
+  }, [weatherCodes]);
 
   return (
-    <div className="App w-screen">
+    <div className="App w-screen relative">
       <div className="flex w-screen justify-center">
         <h1 className="text-6xl font-bold text-white text-center py-5">
           Clima en&nbsp;
@@ -69,11 +73,11 @@ function App() {
         </h1>
       </div>
       {weather && (
-        <div className="flex justify-center">
+        <div className={`top-0 left-1 flex ${mostrar ? "noShowC" : "show"}`}>
           <div
             className={`container-md ${
-              mostrar ? "w-1/2" : "ajuste"
-            } flex justify-center flex-col items-center`}
+              mostrar ? "noShowC" : "ajuste"
+            } flex justify-center flex-col items-center transition-all duration-500`}
           >
             <div className="glass w-56 h-56">
               <img
@@ -94,19 +98,28 @@ function App() {
               <h4></h4>
             </div>
           </div>
-          <button
-            className="bg-transparent text-white hover:text-black hover:border-gray-200 hover:bg-slate-200 hover:opacity-80 transition-all duration-500 w-12 !outline-none !border-none !pl-1"
-            onClick={show}
-          >
-            <span className="modo text-sm rotate-90">
-              {mostrar ? "Más Info" : "Menos Info"}
-            </span>
-          </button>
-          <div
-            className={`transition-all duration-700 container-lg w-screen flex ${
-              mostrar ? "show" : ""
-            }`}
-          >
+          <div className="botonout transition-all duration-500">
+            <button
+              className={`${mostrar ? "" : "modo"} botonin`}
+              onClick={show}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={5.2}
+                stroke="grey"
+                className={`w-6 h-6`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className={`flex w-screen  ${mostrar ? "noShow" : "show"}`}>
             <More weather={weather} />
           </div>
         </div>
