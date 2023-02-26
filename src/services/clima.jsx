@@ -21,6 +21,7 @@ export const iconos = {
   1003: `${path}/partialy_cloudy.png`,
   1030: `${path}/neblina.png`,
   1135: `${path}/niebla_ligera.png`,
+  1009: `${path}/overcast.png`,
 };
 export const tradVientos = {
   E: "Este",

@@ -8,7 +8,7 @@ function More({ weather }) {
   return (
     <>
       {weather && (
-        <div className="text-white flex flex-col justify-around font-sans font-extrabold more p-5">
+        <div className="text-white flex flex-col justify-around font-sans font-extrabold more p-5 h-96">
           <p>
             <span>
               <img

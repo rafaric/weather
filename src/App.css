@@ -10,7 +10,7 @@
 }
 .noShow {
   position: relative;
-  transition: opacity 1.2s ease-out;
+  transition: left 1.2s ease-out;
   top: 0;
   left: 800px;
   opacity: 0;
@@ -20,7 +20,7 @@
   top: 0;
   left: 20px;
   opacity: 1;
-  transition: opacity 1.2s ease-out;
+  transition: left 1.2s ease-out;
 }
 .noShowC {
   position: relative;
@@ -92,4 +92,101 @@
     0 -1px 2px 8px hsla(0, 0%, 0%, 0.5);
   line-height: 86px;
   outline: none;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #121436;
+  overflow: hidden;
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 19s linear infinite;
+}
+
+.background li:nth-child(0) {
+  left: 27%;
+  width: 86px;
+  height: 86px;
+  bottom: -86px;
+  animation-delay: 1s;
+}
+.background li:nth-child(1) {
+  left: 24%;
+  width: 57px;
+  height: 57px;
+  bottom: -57px;
+  animation-delay: 1s;
+}
+.background li:nth-child(2) {
+  left: 73%;
+  width: 70px;
+  height: 70px;
+  bottom: -70px;
+  animation-delay: 2s;
+}
+.background li:nth-child(3) {
+  left: 74%;
+  width: 46px;
+  height: 46px;
+  bottom: -46px;
+  animation-delay: 9s;
+}
+.background li:nth-child(4) {
+  left: 61%;
+  width: 63px;
+  height: 63px;
+  bottom: -63px;
+  animation-delay: 3s;
+}
+.background li:nth-child(5) {
+  left: 12%;
+  width: 58px;
+  height: 58px;
+  bottom: -58px;
+  animation-delay: 22s;
+}
+.background li:nth-child(6) {
+  left: 45%;
+  width: 65px;
+  height: 65px;
+  bottom: -65px;
+  animation-delay: 17s;
+}
+.background li:nth-child(7) {
+  left: 1%;
+  width: 52px;
+  height: 52px;
+  bottom: -52px;
+  animation-delay: 8s;
+}
+.background li:nth-child(8) {
+  left: 35%;
+  width: 60px;
+  height: 60px;
+  bottom: -60px;
+  animation-delay: 15s;
 }

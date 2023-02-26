@@ -57,8 +57,28 @@ function App() {
 
   return (
     <div className="App w-screen relative">
+      <ul class="background">
+        <li>
+          <img src="images/bg/snowflake.png" alt="" />
+        </li>
+        <li>
+          <img src="images/icons/night.png" alt="" />
+        </li>
+        <li>
+          <img src="images/icons/clear.png" alt="" />
+        </li>
+        <li>
+          <img src="images/icons/rainy-day.png" alt="" />
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <div className="flex w-screen justify-center">
-        <h1 className="text-6xl font-bold text-white text-center py-5">
+        <h1 className="text-6xl font-bold text-white text-center py-5 z-10">
           Clima en&nbsp;
           <form className="inline" onSubmit={handleSubmit}>
             <input
